@@ -3,21 +3,20 @@ using namespace std;
 
 int main() {
     int a, b;
-    cout << "Enter two integers: ";
+    cout << "Enter two numbers: ";
     cin >> a >> b;
 
     try {
-        if (b == 0) {
-            throw "Division by zero is not allowed!";
+        if (b == 0){
+            throw b;
         }
-        int result = a / b;
-        cout << "Result: " << result << endl;
+        cout << "Result = " << a / b << endl;
     }
-    catch (const char* msg) {
-        cout << "Error: " << msg << endl;
+    catch (int x) {
+        cout << "Division by " << x << " is not possible!"  << endl;
     }
-    catch (...) {
-        cout << "An unexpected error occurred!" << endl;
-    }
+
     return 0;
 }
+
+// +

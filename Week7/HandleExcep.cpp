@@ -2,18 +2,23 @@
 using namespace std;
 
 int main() {
-    int a, b;
-    cout << "Enter two integers: ";
-    cin >> a >> b;
-
     try {
-        if (b == 0) {
-            throw "Division by zero is not allowed!";
-        }
-        int result = a / b;
-        cout << "Result: " << result << endl;
-    } catch (const char* msg) {
-        cout << "Error: " << msg << endl;
+        int ch;
+        cout << "Enter 1 for int exception" << endl;
+        cout << "Enter 2 for char exception " << endl;
+        cout << "Enter your Choice: ";
+        cin >> ch;
+
+        if (ch == 1)
+            throw 100;
+        else if (ch == 2)
+            throw 'A';
+        else
+            throw 3.14;
     }
+    catch (...) {
+        cout << "Caught an unknown exception!" << endl;
+    }
+
     return 0;
 }
